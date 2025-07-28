@@ -1,0 +1,708 @@
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-07-27 19:13:40,563 [Job erpnext.localhost||983dc4b5-cefc-46ea-afe5-eabb6740a81d]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+  File "/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/job.py", line 1359, in perform
+    self._result = self._execute()
+                   ~~~~~~~~~~~~~^^
+  File "/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/job.py", line 1393, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/kietle/init-bench/apps/frappe/frappe/utils/background_jobs.py", line 272, in execute_job
+    retval = method(**kwargs)
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/setup/demo.py", line 26, in setup_demo_data
+    make_transactions(company)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/setup/demo.py", line 114, in make_transactions
+    create_transaction(item, company, start_date)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/setup/demo.py", line 141, in create_transaction
+    doc.save(ignore_permissions=True)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kietle/init-bench/apps/frappe/frappe/model/document.py", line 485, in save
+    return self._save(*args, **kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/kietle/init-bench/apps/frappe/frappe/model/document.py", line 507, in _save
+    return self.insert()
+           ~~~~~~~~~~~^^
+  File "/home/kietle/init-bench/apps/frappe/frappe/model/document.py", line 415, in insert
+    self.run_before_save_methods()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/kietle/init-bench/apps/frappe/frappe/model/document.py", line 1280, in run_before_save_methods
+    self.run_method("validate")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/kietle/init-bench/apps/frappe/frappe/model/document.py", line 1129, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/kietle/init-bench/apps/frappe/frappe/model/document.py", line 1526, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/kietle/init-bench/apps/frappe/frappe/model/document.py", line 1504, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+                              ~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kietle/init-bench/apps/frappe/frappe/model/document.py", line 1126, in fn
+    return method_object(*args, **kwargs)
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/buying/doctype/purchase_order/purchase_order.py", line 200, in validate
+    super().validate()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/controllers/buying_controller.py", line 35, in validate
+    super().validate()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/controllers/subcontracting_controller.py", line 56, in validate
+    super().validate()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/controllers/stock_controller.py", line 53, in validate
+    super().validate()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/controllers/accounts_controller.py", line 222, in validate
+    self.set_missing_values(for_validate=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/buying/doctype/purchase_order/purchase_order.py", line 700, in set_missing_values
+    super().set_missing_values(for_validate)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/controllers/buying_controller.py", line 203, in set_missing_values
+    get_party_details(
+    ~~~~~~~~~~~~~~~~~^
+    	self.supplier,
+     ^^^^^^^^^^^^^^
+    ...<8 lines>...
+    	ignore_permissions=self.flags.ignore_permissions,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/kietle/init-bench/apps/frappe/frappe/utils/typing_validations.py", line 36, in wrapper
+    return func(*args, **kwargs)
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/accounts/party.py", line 81, in get_party_details
+    return _get_party_details(
+    	party,
+    ...<14 lines>...
+    	pos_profile,
+    )
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/accounts/party.py", line 143, in _get_party_details
+    set_contact_details(party_details, party, party_type)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/accounts/party.py", line 349, in set_contact_details
+    party_details.contact_person = get_default_contact(party_type, party.name)
+                                   ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kietle/init-bench/apps/erpnext/erpnext/accounts/party.py", line 1032, in get_default_contact
+    contacts = frappe.get_all(
+    	"Contact",
+    ...<10 lines>...
+    	order_by="is_primary_contact DESC, is_billing_contact DESC",
+    )
+  File "/home/kietle/init-bench/apps/frappe/frappe/__init__.py", line 1385, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/kietle/init-bench/apps/frappe/frappe/__init__.py", line 1360, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/kietle/init-bench/apps/frappe/frappe/model/db_query.py", line 210, in execute
+    result = self.build_and_run()
+  File "/home/kietle/init-bench/apps/frappe/frappe/model/db_query.py", line 251, in build_and_run
+    return frappe.db.sql(
+           ~~~~~~~~~~~~~^
+    	query,
+     ^^^^^^
+    ...<4 lines>...
+    	run=self.run,
+     ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/kietle/init-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/kietle/init-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/kietle/init-bench/env/lib/python3.13/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/kietle/init-bench/env/lib/python3.13/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/kietle/init-bench/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1054, "Unknown column 'tabContact.is_billing_contact' in 'WHERE'")
+
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=457) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=1108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=15450) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=24650) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=24650) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=24650) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=24650) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=24650) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=24650) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/home/kietle/init-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=26198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()

@@ -1,0 +1,114 @@
+2025-07-27 18:44:30,854 DEBUG cd init-bench && python3 -m venv env
+2025-07-27 18:44:33,314 DEBUG cd init-bench && /home/kietle/init-bench/env/bin/python -m pip install --quiet --upgrade pip
+2025-07-27 18:44:34,507 DEBUG cd init-bench && /home/kietle/init-bench/env/bin/python -m pip install --quiet wheel
+2025-07-27 18:44:35,897 LOG Getting frappe
+2025-07-27 18:44:35,897 DEBUG cd init-bench/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2025-07-27 18:44:47,590 LOG Installing frappe
+2025-07-27 18:44:47,592 DEBUG cd /home/kietle/init-bench && /home/kietle/init-bench/env/bin/python -m pip install --quiet --upgrade -e /home/kietle/init-bench/apps/frappe 
+2025-07-27 18:46:39,056 DEBUG cd /home/kietle/init-bench/apps/frappe && yarn install --check-files
+2025-07-27 18:47:22,006 DEBUG cd /home/kietle/init-bench && sudo supervisorctl restart frappe:
+2025-07-27 18:47:22,227 WARNING cd /home/kietle/init-bench && sudo supervisorctl restart frappe: executed with exit code 7
+2025-07-27 18:47:22,227 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2025-07-27 18:47:22,227 DEBUG cd init-bench && bench build
+2025-07-27 18:47:22,358 INFO /usr/sbin/bench build
+2025-07-27 18:47:40,095 LOG setting up backups
+2025-07-27 18:47:40,191 LOG backups were set up
+2025-07-27 18:47:40,191 INFO Bench init-bench initialized
+2025-07-27 18:47:58,196 INFO /usr/sbin/bench new-site erpnext.localhost
+2025-07-27 18:48:53,374 INFO /usr/sbin/bench get-app https://github.com/frappe/erpnext
+2025-07-27 18:48:53,383 LOG Getting erpnext
+2025-07-27 18:48:53,383 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext  --depth 1 --origin upstream
+2025-07-27 18:49:02,626 LOG Installing erpnext
+2025-07-27 18:49:02,626 DEBUG cd /home/kietle/init-bench && /home/kietle/init-bench/env/bin/python -m pip install --quiet --upgrade -e /home/kietle/init-bench/apps/erpnext 
+2025-07-27 18:49:17,880 DEBUG cd /home/kietle/init-bench/apps/erpnext && yarn install --check-files
+2025-07-27 18:49:18,856 DEBUG bench build --app erpnext
+2025-07-27 18:49:19,018 INFO /usr/sbin/bench build --app erpnext
+2025-07-27 18:49:24,445 DEBUG cd /home/kietle/init-bench && sudo supervisorctl restart frappe:
+2025-07-27 18:49:24,662 WARNING cd /home/kietle/init-bench && sudo supervisorctl restart frappe: executed with exit code 7
+2025-07-27 18:49:24,662 WARNING restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+2025-07-27 18:49:25,095 INFO /usr/sbin/bench --site erpnext.localhost install-app erpnext
+2025-07-27 18:51:11,565 INFO /usr/sbin/bench start
+2025-07-27 18:51:32,674 INFO /usr/sbin/bench start
+2025-07-27 18:52:32,615 INFO /usr/sbin/bench start
+2025-07-27 18:54:06,922 INFO /usr/sbin/bench start
+2025-07-27 18:59:11,108 INFO /usr/sbin/bench start
+2025-07-27 19:00:18,623 INFO /usr/sbin/bench start
+2025-07-27 19:00:27,272 INFO /usr/sbin/bench start
+2025-07-27 19:01:29,135 INFO /usr/sbin/bench start
+2025-07-27 19:01:30,202 INFO /usr/sbin/bench worker
+2025-07-27 19:02:44,134 INFO /usr/sbin/bench start
+2025-07-27 19:02:45,068 INFO /usr/sbin/bench worker
+2025-07-27 19:04:05,582 INFO /usr/sbin/bench start
+2025-07-27 19:04:06,716 INFO /usr/sbin/bench schedule
+2025-07-27 19:04:06,733 INFO /usr/sbin/bench worker
+2025-07-27 19:04:06,740 INFO /usr/sbin/bench watch
+2025-07-27 19:04:06,767 INFO /usr/sbin/bench serve --port 8000
+2025-07-27 19:06:11,628 INFO /usr/sbin/bench start
+2025-07-27 19:06:12,627 INFO /usr/sbin/bench worker
+2025-07-27 19:06:12,645 INFO /usr/sbin/bench schedule
+2025-07-27 19:06:12,652 INFO /usr/sbin/bench serve --port 8000
+2025-07-27 19:06:12,653 INFO /usr/sbin/bench watch
+2025-07-27 19:07:35,671 INFO /usr/sbin/bench start
+2025-07-27 19:07:36,390 INFO /usr/sbin/bench serve --port 8000
+2025-07-27 19:07:36,404 INFO /usr/sbin/bench schedule
+2025-07-27 19:07:36,415 INFO /usr/sbin/bench watch
+2025-07-27 19:07:36,417 INFO /usr/sbin/bench worker
+2025-07-27 19:11:07,950 INFO /usr/sbin/bench start
+2025-07-27 19:11:09,279 INFO /usr/sbin/bench schedule
+2025-07-27 19:11:09,294 INFO /usr/sbin/bench worker
+2025-07-27 19:11:09,295 INFO /usr/sbin/bench watch
+2025-07-27 19:11:09,299 INFO /usr/sbin/bench serve --port 8000
+2025-07-27 19:14:50,300 INFO /usr/sbin/bench start
+2025-07-27 19:14:51,680 INFO /usr/sbin/bench watch
+2025-07-27 19:14:51,693 INFO /usr/sbin/bench schedule
+2025-07-27 19:14:51,694 INFO /usr/sbin/bench worker
+2025-07-27 19:14:51,730 INFO /usr/sbin/bench serve --port 8000
+2025-07-28 08:10:29,805 INFO /usr/sbin/bench start
+2025-07-28 08:10:30,560 INFO /usr/sbin/bench schedule
+2025-07-28 08:10:30,568 INFO /usr/sbin/bench watch
+2025-07-28 08:10:30,569 INFO /usr/sbin/bench serve --port 8000
+2025-07-28 08:10:30,588 INFO /usr/sbin/bench worker
+2025-07-28 08:57:16,877 INFO /usr/sbin/bench build
+2025-07-28 08:58:05,496 INFO /usr/sbin/bench clear-cache
+2025-07-28 08:58:07,344 INFO /usr/sbin/bench restart
+2025-07-28 08:58:13,111 DEBUG cd /home/kietle/init-bench && sudo supervisorctl restart frappe:
+2025-07-28 08:58:13,348 WARNING cd /home/kietle/init-bench && sudo supervisorctl restart frappe: executed with exit code 7
+2025-07-28 08:58:13,348 WARNING /usr/sbin/bench restart executed with exit code 1
+2025-07-28 08:58:14,063 INFO /usr/sbin/bench clear-cache
+2025-07-28 08:58:14,958 INFO /usr/sbin/bench restart
+2025-07-28 08:58:15,419 DEBUG cd /home/kietle/init-bench && sudo supervisorctl restart frappe:
+2025-07-28 08:58:15,664 WARNING cd /home/kietle/init-bench && sudo supervisorctl restart frappe: executed with exit code 7
+2025-07-28 08:58:15,665 WARNING /usr/sbin/bench restart executed with exit code 1
+2025-07-28 08:58:23,628 INFO /usr/sbin/bench start
+2025-07-28 08:58:24,333 INFO /usr/sbin/bench watch
+2025-07-28 08:58:24,338 INFO /usr/sbin/bench schedule
+2025-07-28 08:58:24,341 INFO /usr/sbin/bench serve --port 8000
+2025-07-28 08:58:24,351 INFO /usr/sbin/bench worker
+2025-07-28 09:18:47,417 INFO /usr/sbin/bench build
+2025-07-28 09:19:41,738 INFO /usr/sbin/bench clear-cache
+2025-07-28 09:19:42,609 INFO /usr/sbin/bench restart
+2025-07-28 09:19:48,557 DEBUG cd /home/kietle/init-bench && sudo supervisorctl restart frappe:
+2025-07-28 09:19:48,804 WARNING cd /home/kietle/init-bench && sudo supervisorctl restart frappe: executed with exit code 7
+2025-07-28 09:19:48,805 WARNING /usr/sbin/bench restart executed with exit code 1
+2025-07-28 09:19:58,776 INFO /usr/sbin/bench start
+2025-07-28 09:19:59,441 INFO /usr/sbin/bench schedule
+2025-07-28 09:19:59,442 INFO /usr/sbin/bench watch
+2025-07-28 09:19:59,448 INFO /usr/sbin/bench serve --port 8000
+2025-07-28 09:19:59,454 INFO /usr/sbin/bench worker
+2025-07-28 09:21:30,415 INFO /usr/sbin/bench build
+2025-07-28 09:22:00,263 INFO /usr/sbin/bench clear-cache
+2025-07-28 09:22:01,172 INFO /usr/sbin/bench restart
+2025-07-28 09:22:01,611 DEBUG cd /home/kietle/init-bench && sudo supervisorctl restart frappe:
+2025-07-28 09:22:01,851 WARNING cd /home/kietle/init-bench && sudo supervisorctl restart frappe: executed with exit code 7
+2025-07-28 09:22:01,851 WARNING /usr/sbin/bench restart executed with exit code 1
+2025-07-28 09:22:08,173 INFO /usr/sbin/bench start
+2025-07-28 09:22:08,636 INFO /usr/sbin/bench watch
+2025-07-28 09:22:08,648 INFO /usr/sbin/bench serve --port 8000
+2025-07-28 09:22:08,658 INFO /usr/sbin/bench schedule
+2025-07-28 09:22:08,660 INFO /usr/sbin/bench worker
+2025-07-28 09:25:58,125 INFO /usr/sbin/bench build
+2025-07-28 09:26:36,458 INFO /usr/sbin/bench start
+2025-07-28 09:26:36,885 INFO /usr/sbin/bench serve --port 8000
+2025-07-28 09:26:36,887 INFO /usr/sbin/bench watch
+2025-07-28 09:26:36,887 INFO /usr/sbin/bench schedule
+2025-07-28 09:26:36,892 INFO /usr/sbin/bench worker
